@@ -1,0 +1,52 @@
+===================================================
+Fixed-Size Sliding Window Template (Structure)
+==================================================
+
+
+//brute force approach
+
+int n = nums.size();
+int windowSize = k;
+
+for (int i = 0; i <= n - windowSize; i++) {
+    // → Initialize/reset anything needed for the current window
+    //    e.g., sum = 0, max = INT_MIN, freq.clear(), etc.
+    
+    for (int j = i; j < i + windowSize; j++) {
+        // → Process nums[j] for this window
+        //    e.g., sum += nums[j], count negative, track max/min etc.
+    }
+
+    // → After inner loop finishes, record result for current window
+    //    e.g., res.push_back(sum/max/beauty etc.)
+}
+
+
+
+
+
+
+//optimized sliding window approach 
+
+int i = 0, j = 0;
+int windowSize = k;
+
+while (j < n) {
+    // 1. Expand window by processing nums[j]
+    //    (e.g., sum += nums[j], freq[nums[j]]++, etc.)
+
+    // 2. If window size < k, just move j
+    if (j - i + 1 < k) {
+        j++;
+    }
+    // 3. When window size == k
+    else if (j - i + 1 == k) {
+        // → Do your logic (e.g., update max/min, answer, etc.)
+        // → Use data structure (deque, hashmap, etc.) to fetch results
+
+        // 4. Before sliding the window, undo the effect of nums[i]
+        //    (e.g., sum -= nums[i], freq[nums[i]]--, etc.)
+        i++;
+        j++;
+    }
+}
