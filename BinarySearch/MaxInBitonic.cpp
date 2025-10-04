@@ -8,3 +8,5 @@
 
 //Note in bitonic array first half is increasing and second half is decreasing whereas in peak element array no such condition is there
 //also in bitonic array there is only one peak element whereas in peak element array there can be multiple peak elements
+//and please doont confuse bitonic array with rotated sorted array (eg: 15 18 2 3 6 12) which is also first increasing and then decreasing but it is not bitonic array 
+//
