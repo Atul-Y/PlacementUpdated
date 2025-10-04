@@ -19,14 +19,16 @@ int findInfiniteArray(const vector<int>& arr, int target) {
     int end = 1;
 
     // Expand the range exponentially until the target is within the range
-    while (arr[end] < target) {
-        int newStart = end + 1;
-        // Double the size of the range
-        end = end + (end - start + 1) * 2;
-        start = newStart;
+    while (arr[end] < target && end < arr.size() - 1) {
+        end = end * 2; // Double the range
+        start = end;  // Move start to end
     }
 
-    // Perform binary search in the found range
+    if (end >= arr.size()) {
+        end = arr.size() - 1; // Adjust end if it exceeds array bounds
+    }
+
+    // Perform Simple binary search in the found range
     while (start <= end) {
         int mid = start + (end - start) / 2;
 
