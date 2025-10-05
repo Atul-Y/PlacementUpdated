@@ -21,31 +21,34 @@ for (int i = 0; i <= n - windowSize; i++) {
     //    e.g., res.push_back(sum/max/beauty etc.)
 }
 
+⚖️ Difference in philosophy
+Fixed window brute force → iterate only windows of length k (j runs i..i+k-1).
+Variable window brute force → iterate all possible windows starting at i (so j runs till n-1).
 
 
 
 
+🟢 2. Fixed-Size Sliding Window Template
 
-//optimized sliding window approach 
 
 int i = 0, j = 0;
+int n = nums.size();
 int windowSize = k;
 
 while (j < n) {
-    // 1. Expand window by processing nums[j]
-    //    (e.g., sum += nums[j], freq[nums[j]]++, etc.)
+    // 1. Expand window → include nums[j]
+    // e.g., sum += nums[j], freq[nums[j]]++
 
-    // 2. If window size < k, just move j
-    if (j - i + 1 < k) {
+    // 2. If window size < k, just move forward
+    if (j - i + 1 < windowSize) {
         j++;
     }
     // 3. When window size == k
-    else if (j - i + 1 == k) {
-        // → Do your logic (e.g., update max/min, answer, etc.)
-        // → Use data structure (deque, hashmap, etc.) to fetch results
+    else if (j - i + 1 == windowSize) {
+        // Do your logic here (max/min/sum/freq check/etc.)
 
-        // 4. Before sliding the window, undo the effect of nums[i]
-        //    (e.g., sum -= nums[i], freq[nums[i]]--, etc.)
+        // Before sliding → remove nums[i] effect
+        // e.g., sum -= nums[i], freq[nums[i]]--
         i++;
         j++;
     }

@@ -12,6 +12,9 @@ for (int i = 0; i < n; i++) {
     }
 }
 
+⚖️ Difference in philosophy
+Fixed window brute force → iterate only windows of length k (j runs i..i+k-1).
+Variable window brute force → iterate all possible windows starting at i (so j runs till n-1).
 
 int i = 0, j = 0;
 while (j < n) {
@@ -59,3 +62,6 @@ int longestSubarraySumAtMostK(vector<int>& nums, int k) {
 
     return maxLen;
 } 
+
+//brute force 
+
