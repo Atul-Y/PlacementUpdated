@@ -34,7 +34,7 @@ Variable window brute force → iterate all possible windows starting at i (so j
 int i = 0, j = 0;
 int n = nums.size();
 int windowSize = k;
-
+int sum = 0; // or other variables like max, min, freq map, etc. //we initialize here because we want to maintain the state of the window
 while (j < n) {
     // 1. Expand window → include nums[j]
     // e.g., sum += nums[j], freq[nums[j]]++
@@ -53,3 +53,4 @@ while (j < n) {
         j++;
     }
 }
+//we dont see for j-i+1 > k here in fixed window because it will not come only .

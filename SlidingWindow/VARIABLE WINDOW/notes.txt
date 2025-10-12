@@ -48,8 +48,8 @@ int longestSubarraySumAtMostK(vector<int>& nums, int k) {
     while (j < nums.size()) {
         sum += nums[j];
 
-        if (sum <= k) {
-            maxLen = max(maxLen, j - i + 1);
+        if (sum <= k) {  //condition is satisfied
+            maxLen = max(maxLen, j - i + 1);  //updating ans
             j++;
         } else {
             while (sum > k) {
@@ -63,5 +63,4 @@ int longestSubarraySumAtMostK(vector<int>& nums, int k) {
     return maxLen;
 } 
 
-//brute force 
 
