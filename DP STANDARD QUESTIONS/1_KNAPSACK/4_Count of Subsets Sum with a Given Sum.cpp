@@ -14,68 +14,68 @@
 //=======================================================================
 //1️⃣ Recursive Approach (Without Memoization)
 //=======================================================================
-#include <iostream>
-using namespace std;
+// #include <iostream>
+// using namespace std;
 
-int countSubsets(int arr[], int n, int target) {
-    // Base Cases
-    if (target == 0) return 1;  // one subset (empty set)
-    if (n == 0) return 0;
+// int countSubsets(int arr[], int n, int target) {
+//     // Base Cases
+//     if (target == 0) return 1;  // one subset (empty set)
+//     if (n == 0) return 0;
 
-    if (arr[n - 1] <= target) {
-        // include + exclude
-        return countSubsets(arr, n - 1, target - arr[n - 1]) +
-               countSubsets(arr, n - 1, target);
-    } else {
-        // can't include
-        return countSubsets(arr, n - 1, target);
-    }
-}
+//     if (arr[n - 1] <= target) {
+//         // include + exclude
+//         return countSubsets(arr, n - 1, target - arr[n - 1]) +
+//                countSubsets(arr, n - 1, target);
+//     } else {
+//         // can't include
+//         return countSubsets(arr, n - 1, target);
+//     }
+// }
 
-int main() {
-    int arr[] = {1, 2, 3, 3};
-    int target = 6;
-    int n = sizeof(arr) / sizeof(arr[0]);
+// int main() {
+//     int arr[] = {1, 2, 3, 3};
+//     int target = 6;
+//     int n = sizeof(arr) / sizeof(arr[0]);
 
-    cout << countSubsets(arr, n, target) << endl;
-    return 0;
-}
+//     cout << countSubsets(arr, n, target) << endl;
+//     return 0;
+// }
 //=======================================================================
 // 2️⃣ Recursive + Memoization (Top-Down DP)
 //=======================================================================
-#include <iostream>
-#include <cstring>
-using namespace std;
+// #include <iostream>
+// #include <cstring>
+// using namespace std;
 
-const int MAX = 1000;
-int dp[MAX][MAX];
+// const int MAX = 1000;
+// int dp[MAX][MAX];
 
-int countSubsetsMemo(int arr[], int n, int target) {
-    if (target == 0) return 1;
-    if (n == 0) return 0;
+// int countSubsetsMemo(int arr[], int n, int target) {
+//     if (target == 0) return 1;
+//     if (n == 0) return 0;
 
-    if (dp[n][target] != -1)
-        return dp[n][target];
+//     if (dp[n][target] != -1)
+//         return dp[n][target];
 
-    if (arr[n - 1] <= target) {
-        dp[n][target] = countSubsetsMemo(arr, n - 1, target - arr[n - 1]) +
-                        countSubsetsMemo(arr, n - 1, target);
-    } else {
-        dp[n][target] = countSubsetsMemo(arr, n - 1, target);
-    }
+//     if (arr[n - 1] <= target) {
+//         dp[n][target] = countSubsetsMemo(arr, n - 1, target - arr[n - 1]) +
+//                         countSubsetsMemo(arr, n - 1, target);
+//     } else {
+//         dp[n][target] = countSubsetsMemo(arr, n - 1, target);
+//     }
 
-    return dp[n][target];
-}
+//     return dp[n][target];
+// }
 
-int main() {
-    int arr[] = {1, 2, 3, 3};
-    int target = 6;
-    int n = sizeof(arr) / sizeof(arr[0]);
+// int main() {
+//     int arr[] = {1, 2, 3, 3};
+//     int target = 6;
+//     int n = sizeof(arr) / sizeof(arr[0]);
 
-    memset(dp, -1, sizeof(dp));
-    cout << countSubsetsMemo(arr, n, target) << endl;
-    return 0;
-}
+//     memset(dp, -1, sizeof(dp));
+//     cout << countSubsetsMemo(arr, n, target) << endl;
+//     return 0;
+// }
 //=======================================================================
 // 3️⃣ Bottom-Up Tabulation (Iterative DP)
 //=======================================================================
@@ -88,25 +88,18 @@ int countSubsets(int arr[], int n, int target) {
 
     // Initialize
     for (int i = 0; i <= n; i++)
-        dp[i][0] = 1; // 1 way to make sum 0 (empty set)
+        dp[i][0] = 1; 
 
     for (int j = 1; j <= target; j++)  
-        dp[0][j] = 0; // 0 ways with 0 elements
+        dp[0][j] = 0; 
 
-    // Fill DP table
+    // Fill dp table    
     for (int i = 1; i <= n; i++) {
         
-        for (int j = 0; j <= target; j++) {  //why starting j from 0 not 1 beause we need to consider the case when target is 0
-            //replacing the recursive calls with a DP table
-            //replace n with i and target with j 
-
-            
-// 💡 Golden Rule:
-// Use j = 0 when you need to count subsets, including sum = 0 case.
-// Use j = 1 when you only care about checking for sum > 0.
+        for (int j = 1; j <= target; j++) {  
 
             if (arr[i - 1] <= j)
-                dp[i][j] = dp[i - 1][j] + dp[i - 1][j - arr[i - 1]];
+                dp[i][j] = dp[i - 1][j - arr[i - 1]] + dp[i - 1][j];
             else
                 dp[i][j] = dp[i - 1][j];
         }
@@ -120,7 +113,7 @@ int main() {
     int target = 6;
     int n = sizeof(arr) / sizeof(arr[0]);
 
-    cout << countSubsets(arr, n, target) << endl;
+    cout << countSubsets(arr, n, target) << endl;  // Output: 3
     return 0;
 }
 

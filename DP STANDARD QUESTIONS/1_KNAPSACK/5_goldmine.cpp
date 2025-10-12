@@ -8,23 +8,23 @@ int collectGold(int n, int m, vector<vector<int>>& arr, vector<vector<int>>& dp)
 
   for (int j = m - 1; j >= 0; j--) {
     for (int i = n - 1; i >= 0; i--) {
-      if (j == m - 1) {
+      if (j == m - 1) {  //last column
         dp[i][j] = arr[i][j];
       }
-      else if (i == 0) {
-        dp[i][j] = arr[i][j] + max(dp[i][j + 1], dp[i + 1][j + 1]);
+      else if (i == 0) {  //first row
+        dp[i][j] = arr[i][j] + max(dp[i][j + 1], dp[i + 1][j + 1]); 
       }
-      else if (i == n - 1) {
+      else if (i == n - 1) {  //last row
         dp[i][j] = arr[i][j] + max(dp[i - 1][j + 1], dp[i][j + 1]);
       }
-      else {
+      else {  //middle cells
         dp[i][j] = arr[i][j] + max ( max(dp[i - 1][j + 1], dp[i + 1][j + 1]), dp[i][j + 1] );
       }
     }
   }
 
   int maxGold = dp[0][0];
-  for (int i = 0; i < dp.size(); i++) {
+  for (int i = 0; i < dp.size(); i++) {  //first column m se max value nikalni hai
     maxGold = max(maxGold, dp[i][0]);
   }
   return (maxGold);

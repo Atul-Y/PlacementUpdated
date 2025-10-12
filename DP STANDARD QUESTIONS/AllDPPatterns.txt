@@ -11,20 +11,20 @@ Pattern ->𝟏𝐃 𝐃𝐲𝐧𝐚𝐦𝐢𝐜 𝐏𝐫𝐨𝐠𝐫𝐚𝐦𝐦
 Pattern -> 𝐃𝐲𝐧𝐚𝐦𝐢𝐜 𝐏𝐫𝐨𝐠𝐫𝐚𝐦𝐦𝐢𝐧𝐠 𝐎𝐧 𝐆𝐫𝐢𝐝𝐬 / 𝟐𝐃
 1) Grid Unique Paths
 2) Unique Paths 
-3) Minimum path sum in Grid
+3) Minimum path sum in Grid //✅
 4) Tringle (Fixed Starting Point and Variable Ending Point)
 5) Minimum/Maximum Falling Path Sum
 6) Cherry Pickup 2
 
 Pattern -> 𝐃𝐲𝐧𝐚𝐦𝐢𝐜 𝐏𝐫𝐨𝐠𝐫𝐚𝐦𝐦𝐢𝐧𝐠 𝐎𝐧 𝐒𝐮𝐛𝐬𝐞𝐭𝐬 / 𝐒𝐮𝐛𝐬𝐞𝐪𝐮𝐞𝐧𝐜𝐞
-1) Subset Sum Equals to Target
-2) Partition Equals Subset Sum
+1) Subset Sum Equals to Target  //✅
+2) Partition Equals Subset Sum //✅
 3) Partition A subset into 2 subset with minimum absolute sum diff.
-4) Count Subsets With Sum K
-5) Count Partitions with given difference
-6) 0/1 Knapsack
-7) Minimum Coins
-8) Target Sum
+4) Count Subsets With Sum K //✅
+5) Count Partitions with given difference 
+6) 0/1 Knapsack  //✅
+7) Minimum Coins   
+8) Target Sum  //✅
 9) Coin Change 2
 10) Unbounded Knapsack 1 D array
 11) Rod Cutting 1 D array
@@ -41,7 +41,7 @@ Pattern -> 𝐃𝐲𝐧𝐚𝐦𝐢𝐜 𝐏𝐫𝐨𝐠𝐫𝐚𝐦𝐦𝐢𝐧
 9) Wildcard Matching
 
 Pattern -> 𝐃𝐲𝐧𝐚𝐦𝐢𝐜 𝐏𝐫𝐨𝐠𝐫𝐚𝐦𝐦𝐢𝐧𝐠 𝐎𝐧 𝐒𝐭𝐨𝐜𝐤𝐬
-1) Best Time To Buy and Sell Stock (Buy Ones & Sell Ones )
+1) Best Time To Buy and Sell Stock (Buy Ones & Sell Ones)
 1) Best Time To Buy and Sell Stock 2 (Unlimited Time Buy & Sell)
 1) Best Time To Buy and Sell Stock 3 ( At Max 2 Times Buy & Sell)
 1) Best Time To Buy and Sell Stock 4 (K times Buy & Sell )

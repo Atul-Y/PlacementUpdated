@@ -1,6 +1,7 @@
 
 
-
+// Input:  W = 4, profit[] = [1, 2, 3], weight[] = [4, 5, 1]
+// Output: 3
 
 #include <iostream>
 #include <vector>
@@ -186,4 +187,19 @@ Time Complexity: O(N*W).
 where ‘N’ is the number of weight element and ‘W’ is capacity. As for every weight element we traverse through all weight capacities 1<=w<=W.
 Auxiliary Space: O(N*W). 
 The use of 2-D array of size ‘N*W’.
+
+Input:  W = 4, profit[] = [1, 2, 3], weight[] = [4, 5, 1]
+Output: 3
+table after the completion of the code:
+	  0   1   2   3   4     --> Capacity(j)  
+    -----------------  
+   0| 0 | 0 | 0 | 0 | 0
+   1| 0 | 0 | 0 | 0 | 1
+   2| 0 | 0 | 0 | 0 | 1
+   3| 0 | 3 | 3 | 3 | 3
+   ^
+   | 
+   Number of items(i)
+
+   remmeber the index of wt and val array starts from 0 but in the matrix it starts from 1 that's why we do i-1 and j-1 while accessing the array elements.
 */

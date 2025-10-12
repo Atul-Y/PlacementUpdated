@@ -154,3 +154,17 @@ int main() {
 // | Recursive            | Exponential     | O(n) stack       |
 // | Memoized Top-Down    | O(n \* sum)     | O(n \* sum)      |
 // | Bottom-Up Tabulation | O(n \* sum)     | O(n \* sum)      |
+
+
+//revision notes :
+// The problem can be reduced to finding a subset with sum equal to half of the total sum of the array.
+// If such a subset exists, the other subset will automatically have the same sum.
+// We can use a dynamic programming approach similar to the "Subset Sum Problem" to solve this.
+// We create a 2D DP table where dp[i][j] indicates whether a subset with sum j can be formed using the first i elements.
+// The final answer will be found in dp[n][total_sum/2].
+// Here, you need to just print true or false whether such a target sum subset exists or not. You do not need to print the subset.
+//Catch : difference subset sum and equal sum partition is that in subset sum we are given a target sum and we have to find whether a subset with that sum exists or not
+// but in equal sum partition we have to find whether the array can be partitioned into two subsets with equal sum or not.
+// If the total sum of the array is odd, we can immediately return false since two equal subsets cannot be formed.
+// If the total sum is even, we proceed to check if a subset with sum equal to half of the total sum exists using the subset sum approach.
+
